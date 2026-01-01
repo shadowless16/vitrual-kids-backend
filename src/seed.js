@@ -12,7 +12,8 @@ dotenv.config();
 const seedData = async () => {
   try {
     // 1. Connect to Database
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/virtual-kids-platform');
+    const mongoURI = 'mongodb+srv://niitsocialhub:devsocial@cluster0.5m149pf.mongodb.net/virtual-kids-platform?retryWrites=true&w=majority&appName=Cluster0&maxPoolSize=10&serverSelectionTimeoutMS=30000&socketTimeoutMS=60000&connectTimeoutMS=30000';
+    await mongoose.connect(mongoURI);
     console.log('Connected to MongoDB for seeding...');
 
     // 2. Clear Existing Data
