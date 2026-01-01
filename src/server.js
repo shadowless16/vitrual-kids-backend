@@ -11,7 +11,11 @@ const app = express();
 // Middleware
 app.use(morgan('dev'));
 app.use(cors({
-  origin: process.env.FRONT_URL || 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000',
+    'https://virtual-kids-platform.vercel.app',
+    process.env.FRONT_URL
+  ].filter(Boolean),
   credentials: true
 }));
 app.use(express.json());
