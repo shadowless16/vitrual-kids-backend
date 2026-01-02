@@ -13,7 +13,7 @@ app.use(morgan('dev'));
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://virtual-kids-platform.vercel.app',
+    'https://virtuakids-platform.vercel.app',
     process.env.FRONT_URL
   ].filter(Boolean),
   credentials: true
