@@ -10,6 +10,9 @@ const resourceSchema = new mongoose.Schema({
   type: { type: String, default: 'link' }, // 'document', 'video', 'link', 'project'
   status: { type: String, default: 'active' }, // 'active', 'inactive'
   content: { type: String }, // Short textual content
+  createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  schoolId: { type: mongoose.Schema.Types.ObjectId, ref: 'School' },
+  scope: { type: String, enum: ['global', 'school'], default: 'school' },
   createdAt: { type: Date, default: Date.now }
 });
 
